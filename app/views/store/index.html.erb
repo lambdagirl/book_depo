@@ -1,0 +1,14 @@
+<% if notice %>
+<aside id="notice"><%= notice %></aside>
+<% end %>
+<h1>Your Book Catelog</h1>
+<ul>
+  <% @products.each do |product| %>
+  <li>
+    <%= image_tag(product.image_url) %>
+    <h2><%= product.title %></h2>
+    <p><%= sanitize(product.description) %></p>
+    <div><%= product.price %></div>
+  </li>
+  <% end %>
+</ul>
